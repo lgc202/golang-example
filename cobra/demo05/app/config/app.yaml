@@ -1,0 +1,9 @@
+app:
+  version: v1.0.0
+  author: lgc
+  port: 8080
+mysql:
+  host: 127.0.0.1
+  data_base: test
+  user: root
+  password: root

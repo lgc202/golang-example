@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "./;proto";
+
+// Echo 服务，包含了4种类型API
+service Echo {
+  // UnaryAPI
+  rpc UnaryEcho(EchoRequest) returns (EchoResponse) {}
+  // ServerStreaming
+  rpc ServerStreamingEcho(EchoRequest) returns (stream EchoResponse) {}
+  // ClientStreamingE
+  rpc ClientStreamingEcho(stream EchoRequest) returns (EchoResponse) {}
+  // BidirectionalStreaming
+  rpc BidirectionalStreamingEcho(stream EchoRequest) returns (stream EchoResponse) {}
+}
+
+message EchoRequest {
+  string message = 1;
+}
+
+message EchoResponse {
+  string message = 1;
+}
